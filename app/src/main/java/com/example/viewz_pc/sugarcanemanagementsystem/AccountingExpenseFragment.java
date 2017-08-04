@@ -83,7 +83,7 @@ public class AccountingExpenseFragment extends Fragment {
         date.setText(getArguments().getString("DATE2"));
 
         initGridLayout();
-        initRecyclerView();
+        //initRecyclerView();
     }
 
     public void initGridLayout() {
@@ -98,7 +98,7 @@ public class AccountingExpenseFragment extends Fragment {
         layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
 
-        adapter = new AccountingAdapter(getActivity(), labelName, orderList, condition);
+        //adapter = new AccountingAdapter(getActivity(), labelName, orderList, condition);
         recyclerView.setAdapter(adapter);
     }
 }

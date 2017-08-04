@@ -2,12 +2,18 @@ package com.example.viewz_pc.sugarcanemanagementsystem;
 
 import android.content.Intent;
 import android.os.AsyncTask;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.webkit.JsResult;
+import android.webkit.WebChromeClient;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
 import android.widget.Button;
 
 import org.json.JSONArray;
@@ -21,88 +27,48 @@ import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
-public class CuttingPlantModuleActivity extends AppCompatActivity implements View.OnClickListener {
-    private RecyclerView recyclerView;
-    private RecyclerView.LayoutManager layoutManager;
-    private RecyclerView.Adapter adapter;
-    private ArrayList<CuttingModel> cutplantList;
+public class CuttingPlantModuleActivity extends AppCompatActivity  {
+    WebView CHMSWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cutting_plant_module);
 
-        Button CreateCuttingPlant_button = (Button) findViewById(R.id.button7);
-        CreateCuttingPlant_button.setOnClickListener(this);
+        String AppURL = getIntent().getStringExtra("AppURL");
 
-        new OkHttpHandler().execute();
+        CHMSWebView = (WebView) findViewById(R.id.webView);
+        CHMSWebView.setWebViewClient(new WebViewClient());
+        CHMSWebView.setWebChromeClient(new MyWebChromeClient());
+        CHMSWebView.getSettings().setJavaScriptEnabled(true);
+        CHMSWebView.loadUrl(AppURL);
     }
 
-    public void initRecycler(ArrayList<CuttingModel> queueList){
-        recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
-        layoutManager = new LinearLayoutManager(CuttingPlantModuleActivity.this);
-        recyclerView.setLayoutManager(layoutManager);
-
-        adapter = new CuttingAdapter(CuttingPlantModuleActivity.this, queueList);
-        recyclerView.setAdapter(adapter);
-    }
-
-    public class OkHttpHandler extends AsyncTask<Object, Object, String> {
-        //String CONTRACTOR_NO = loadPreferencesNo();
-
+    private class MyWebChromeClient extends WebChromeClient {
         @Override
-        protected String doInBackground(Object... params) {
-            final String URL = "http://188.166.191.60/api/v1/contractor/get_est_cutting_queue_list?CONTRACTOR_NO=1";
-
-            OkHttpClient okHttpClient = new OkHttpClient();
-            Request.Builder builder = new Request.Builder(); // Create request
-            Request request = builder.url(URL)
-                    .build();
-
-            try {
-                // Call newCall() to connect server, return Call class then call execute()
-                Response response = okHttpClient.newCall(request).execute(); // execute() returns Response
-                // When finish sending and receiving data with server, check result
-                if (response.isSuccessful()) {
-                    return response.body().string(); // Read data
-                } else {
-                    return "Not Success - code : " + response.code();
-                }
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-            return null;
-        }
-
-        /*
-        * Use result from doInBackground()
-        * */
-        @Override
-        protected void onPostExecute(String data) {
-            super.onPostExecute(data);
-            Log.d("CuttingPlantModule", data);
-            if (data != null) {
-                try {
-                    JSONArray jsonArray = new JSONArray(data);
-                    cutplantList = new ArrayList<>();
-                    for (int i = 0; i < jsonArray.length(); i++) {
-                        JSONObject jsonObject = jsonArray.getJSONObject(i); // get JSON at index
-                        cutplantList.add(new CuttingModel(jsonObject.getString("ID"),
-                                jsonObject.getString("EST_CUTTING_CODE")));
-                    }
-                    initRecycler(cutplantList);
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
+        public boolean onJsAlert(WebView view, String url, String message, JsResult result) {
+            Log.d("LOG_TAG", message);
+            new AlertDialog.Builder(view.getContext())
+                    .setMessage(message).setCancelable(true).show();
+            result.confirm();
+            return true;
         }
     }
 
     @Override
-    public void onClick(View v) {
-        if(v.getId()==R.id.button7){
-            Intent intent = new Intent(CuttingPlantModuleActivity.this, CuttingPlantCreateActivity.class);
-            startActivity(intent);
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (event.getAction() == KeyEvent.ACTION_DOWN) {
+            switch (keyCode) {
+                case KeyEvent.KEYCODE_BACK:
+                    if (CHMSWebView.canGoBack()) {
+                        CHMSWebView.goBack();
+                    } else {
+                        finish();
+                    }
+                    return true;
+            }
+
         }
+        return super.onKeyDown(keyCode, event);
     }
 }

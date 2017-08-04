@@ -3,45 +3,58 @@ package com.example.viewz_pc.sugarcanemanagementsystem;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.widget.Toast;
+
+import org.json.JSONArray;
+import org.json.JSONObject;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 
 public class AccountingPlantActivity extends AppCompatActivity {
+    private ArrayList<PlantModel> plantList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accounting_plant);
+
+        plantList = new ArrayList<>();
+        plantList.add(new PlantModel("60012-001", "นาย ก. ชาวไร่", "นาย ก. สำรวจ", "นาย ค. ทำงาน"));
+        plantList.add(new PlantModel("60012-002", "นาย ก. ชาวไร่", "นาย ก. สำรวจ", "นาย ค. ทำงาน"));
+        plantList.add(new PlantModel("60013-004", "นาย ก. ชาวไร่", "นาย ก. สำรวจ", "นาย ค. ทำงาน"));
+        initRecycler(plantList);
+        //new OkHttpHandler().execute();
     }
 
     private class OkHttpHandler extends AsyncTask<Object, Object, String> {
-        OkHttpClient client = new OkHttpClient();
-        Request request;
-        Response response;
-        String CONTRACTOR_ID;
 
         @Override
         protected void onPreExecute() {
             super.onPreExecute();
-            //CONTRACTOR_ID = loadPreferencesContractor("CONTRACTOR_ID");
-            Log.d("Profile", CONTRACTOR_ID);
+
         }
 
         @Override
         protected String doInBackground(Object... params) {
-            String url = "http://188.166.191.60/api/v2/contractor/get/detail?CONTRACTOR_ID=" + CONTRACTOR_ID;
-            Log.d("Profile",url);
-            request = new Request.Builder()
-                    .url(url)
-                    .build();
-            try {
+            final String URL = "";
 
-                response = client.newCall(request).execute();
+            OkHttpClient okHttpClient = new OkHttpClient();
+            Request.Builder builder = new Request.Builder(); // Create request
+            Request request = builder.url(URL)
+                    .build();
+
+            try {
+                // Call newCall() to connect server, return Call class then call execute()
+                Response response = okHttpClient.newCall(request).execute(); // execute() returns Response
+                // When finish sending and receiving data with server, check result
                 if (response.isSuccessful()) {
                     return response.body().string(); // Read data
                 } else {
@@ -53,36 +66,23 @@ public class AccountingPlantActivity extends AppCompatActivity {
             return null;
         }
 
+        /*
+        * Use result from doInBackground()
+        * */
         @Override
-        protected void onPostExecute(String result) {
-            super.onPostExecute(result);
-            Log.d("Show Profile",result);
-            /*try {
-                if (!result.equals("[]")) {
-                    JSONArray jsonArray = new JSONArray(result);
-                    JSONObject jsonObject = jsonArray.getJSONObject(0);
+        protected void onPostExecute(String data) {
+            super.onPostExecute(data);
+            Log.d("AccountPlant", data);
 
-                    String fullname, company, address, email, phone;
-                    fullname = jsonObject.getString("TITLE_NAME") + " " + jsonObject.getString("FIRST_NAME")
-                            + " " + jsonObject.getString("LAST_NAME");
-                    company = jsonObject.getString("COMPANY_NAME");
-                    email = jsonObject.getString("EMAIL");
-                    phone = jsonObject.getString("PHONE");
-                    address = jsonObject.getString("ADDRESS") + " " + jsonObject.getString("SUB_DISTRICT")
-                            + " " + jsonObject.getString("DISTRICT") +
-                            jsonObject.getString("PROVINCE") + " " + jsonObject.getString("POSTCODE");
-
-                    txt_fullname.setText(fullname);
-                    txt_company.setText(company);
-                    txt_address.setText(address);
-                    txt_email.setText(email);
-                    txt_phone.setText(phone);
-                } else {
-                    Toast.makeText(ContractorShowProfileActivity.this, "ไม่มีข้อมูล", Toast.LENGTH_LONG).show();
-                }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }*/
         }
+    }
+
+    public void initRecycler(ArrayList<PlantModel> plantList){
+        RecyclerView recyclerView = (RecyclerView) findViewById(R.id.recyclerView);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(AccountingPlantActivity.this);
+        recyclerView.setLayoutManager(layoutManager);
+
+        AccountingAdapter adapter = new AccountingAdapter(AccountingPlantActivity.this, plantList);
+        recyclerView.setAdapter(adapter);
     }
 }

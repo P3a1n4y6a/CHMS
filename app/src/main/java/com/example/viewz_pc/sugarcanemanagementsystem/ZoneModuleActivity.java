@@ -90,6 +90,8 @@ public class ZoneModuleActivity extends FragmentActivity implements OnMapReadyCa
         mMap.setOnMapClickListener(this);
         mMap.setOnMapLongClickListener(this); // Listen when user touch to add a pin
         mMap.setInfoWindowAdapter(new CustomInfoWindow(ZoneModuleActivity.this));
+        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(new LatLng(16.414986, 102.714771), 14.0f) );
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         if (isOnline()) {
             new OkHttpHandler().execute(); // Zone location
@@ -462,18 +464,6 @@ public class ZoneModuleActivity extends FragmentActivity implements OnMapReadyCa
                 position = new LatLng(zoneList.get(i).getLat(), zoneList.get(i).getLng());
                 createMarkerZone(mMap, position, zoneList.get(i).getName(), zoneList.get(i).getId());
             }
-
-            /*LatLngBounds.Builder builder = new LatLngBounds.Builder();
-            for (Marker marker : zoneListPin) {
-                builder.include(marker.getPosition());
-            }
-
-            LatLngBounds bounds = builder.build();
-            int padding = 0; // offset from edges of the map in pixels
-            CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
-            mMap.moveCamera(cu);
-            //mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(position, 16));
-            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);*/
         } else {
             Toast.makeText(ZoneModuleActivity.this, "ไม่มีข้อมูลโซน", Toast.LENGTH_LONG).show();
         }
@@ -587,7 +577,6 @@ public class ZoneModuleActivity extends FragmentActivity implements OnMapReadyCa
             int padding = 100; // offset from edges of the map in pixels
             CameraUpdate cu = CameraUpdateFactory.newLatLngBounds(bounds, padding);
             mMap.moveCamera(cu);
-            mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
 
         } else {
             Toast.makeText(ZoneModuleActivity.this, "ไม่มีข้อมูลแปลง หรือ โซน", Toast.LENGTH_LONG).show();

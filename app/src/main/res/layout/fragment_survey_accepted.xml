@@ -1,22 +1,19 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context="com.example.viewz_pc.sugarcanemanagementsystem.SurveyAcceptedFragment">
 
-    <ProgressBar
-        android:id="@+id/progress"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipeContainer"
         android:layout_width="match_parent"
-        android:layout_height="5dp"
-        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
-        android:max="100"
-        android:progress="1"
-        android:visibility="invisible" />
+        android:layout_height="match_parent">
 
-    <WebView
-        android:id="@+id/web"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent" />
+        <WebView
+            android:id="@+id/web"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
 </LinearLayout>

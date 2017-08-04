@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.viewz_pc.sugarcanemanagementsystem">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
@@ -49,14 +50,10 @@
             android:name=".DashboardActivity"
             android:label="@string/dash_page"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar">
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity
             android:name=".FarmerModuleActivity"
             android:label="@string/farmer_page"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".FarmerRequestModuleActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".ShowPlantDetailActivity"
@@ -67,7 +64,8 @@
             android:label="@string/profile_page" />
         <activity
             android:name=".SurveyModuleActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:label="@string/survey_queue_page"/>
         <activity
             android:name=".ShowSurveyResultActivity"
             android:screenOrientation="portrait" />
@@ -96,6 +94,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".CuttingPlantModuleActivity"
+            android:label="@string/cutting_plant_page"
             android:screenOrientation="portrait" />
         <activity
             android:name=".CuttingQueueModuleActivity"
@@ -123,18 +122,17 @@
             android:name=".AccountingHarvesterActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".AccountingPlantActivity"
-            android:screenOrientation="portrait" />
-
-        <activity
             android:name=".ContractorSignUpActivity"
-            android:screenOrientation="portrait"
-            android:label="@string/new_contractor_account"/>
+            android:label="@string/new_contractor_account"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".ContractorEditModuleActivity"
-            android:screenOrientation="portrait">
+            android:screenOrientation="portrait"></activity>
 
-        </activity>
+        <activity
+            android:name=".AccountingPlantActivity"
+            android:screenOrientation="portrait"
+            android:label="ค่าใช้จ่ายรายแปลง"/>
     </application>
 
 </manifest>

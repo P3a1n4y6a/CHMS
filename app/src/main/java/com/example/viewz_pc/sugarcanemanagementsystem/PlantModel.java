@@ -5,8 +5,9 @@ package com.example.viewz_pc.sugarcanemanagementsystem;
  */
 
 public class PlantModel {
-    private String id, address, area, rate, status, zone_id, fullname, estCut;
+    private String id, address, area, rate, status, zone_id, fullname, estCut, survey, employee;
     private double latitude, longitude;
+    private String labor_cost, repair_cost, decadent_cost, fuel_cost, trans_cost;
 
     PlantModel(String id, String area) {
         this.id = id;
@@ -22,32 +23,27 @@ public class PlantModel {
         this.longitude = longitude;
     }
 
-    PlantModel(String id, String address, String area, String rate, String status) {
+    PlantModel(String id, String fullname, String survey, String employee) {
         this.id = id;
-        this.address = address;
-        this.area = area;
-        this.rate = rate;
-        this.status = status;
+        this.fullname = fullname;
+        this.survey = survey;
+        this.employee = employee;
+    }
+
+    PlantModel(String labor_cost, String repair_cost, String decadent_cost, String fuel_cost, String trans_cost){
+        this.labor_cost = labor_cost;
+        this.repair_cost = repair_cost;
+        this.decadent_cost = decadent_cost;
+        this.fuel_cost = fuel_cost;
+        this.trans_cost = trans_cost;
     }
 
     public String getId() {
         return id;
     }
 
-    public String getAddress() {
-        return address;
-    }
-
     public String getArea() {
         return area;
-    }
-
-    public String getRate() {
-        return rate;
-    }
-
-    public String getStatus() {
-        return status;
     }
 
     public String getZone() {
@@ -68,5 +64,33 @@ public class PlantModel {
 
     public String getEstCut() {
         return estCut;
+    }
+
+    public String getLabor_cost() {
+        return labor_cost;
+    }
+
+    public String getRepair_cost() {
+        return repair_cost;
+    }
+
+    public String getDecadent_cost() {
+        return decadent_cost;
+    }
+
+    public String getFuel_cost() {
+        return fuel_cost;
+    }
+
+    public String getTrans_cost() {
+        return trans_cost;
+    }
+
+    public String getSurvey() {
+        return survey;
+    }
+
+    public String getEmployee() {
+        return employee;
     }
 }

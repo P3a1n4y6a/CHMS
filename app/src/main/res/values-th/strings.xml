@@ -20,6 +20,7 @@
     <string name="edit_farmer_page">แก้ไขข้อมูลชาวไร่</string>
     <string name="edit_survey_page">แก้ไขการสำรวจ</string>
     <string name="edit_contractor_page">แก้ไขข้อมูลผู้ใช้งาน</string>
+    <string name="cutting_plant_page">การเลือกแปลงตัด</string>
     <string name="zone_page">โซน</string>
     <string name="cost_page">ข้อมูลค่าใช้จ่าย</string>
     <string name="profile_page">ข้อมูลส่วนตัวของผู้ใช้</string>
@@ -67,7 +68,8 @@
     <string name="error_unconnect">คุณไม่ได้เชื่อมต่อเครือข่ายอินเตอร์เน็ต</string>
     <string name="zone_dialog">กรุณาตั้งชื่อโซน</string>
     <string name="selected_depart">เลือกแผนก</string>
-    <string name="survey_emp">คนสำรวจ</string>
+    <string name="survey_emp">คนสำรวจ:</string>
+    <string name="worker_emp">คนปฏิบัติงาน:</string>
     <string name="cutter_emp">รถตัด</string>
     <string name="tractor_emp">รถแทรกเตอร์</string>
     <string name="assert_rm">คุณต้องการลบใช่หรือไม่</string>
@@ -86,6 +88,7 @@
     <string name="accept_button">ยอมรับ</string>
     <string name="decline_button">ปฎิเสธ</string>
 
+    <string name="farmer_name">ชื่อชาวไร่</string>
     <string name="plant">แปลงทั้งหมดของชาวไร่</string>
     <string name="plant_id">หมายเลขแปลง:</string>
     <string name="survey_date">วันที่สำรวจ:</string>
@@ -174,23 +177,9 @@
     <string name="estimate">ค่าประเมิน</string>
     <string name="percent">ความคลาดเคลื่อน</string>
 
-    <string-array name="sort_by">
-        <item>หมายเลขชาวไร่</item>
-        <item>หมายเลขแปลง</item>
-    </string-array>
-
-    <string-array name="grade">
-        <item>ไม่มีเกรด</item>
-        <item>A</item>
-        <item>B</item>
-        <item>C</item>
-    </string-array>
-
-    <string-array name="real_qc">
-        <item>ผ่าน</item>
-        <item>ไม่ผ่าน</item>
-        <item>ไม่มีคิว</item>
-    </string-array>
+    <string name="labor_cost">ค่าแรงงาน</string>
+    <string name="decadent_cost">ค่าเสื่อมราคา</string>
+    <string name="trans_cost">ค่าขนย้าย</string>
 
     <string-array name="criteria">
         <item>1. ผลผลิตอ้อยในแปลง(ตัน/ไร่)</item>

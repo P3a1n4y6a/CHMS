@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:background="@color/colorWhiteBackground"
+    android:elevation="5dp"
+    android:orientation="vertical"
+    android:padding="10dp">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/plantLabel"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="@string/plant_id" />
+
+            <TextView
+                android:id="@+id/plant"
+                style="@style/MediumGrayLightText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="20"
+                android:gravity="center_vertical" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/farmerLabel"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/name" />
+
+            <TextView
+                android:id="@+id/farmer"
+                style="@style/MediumGrayLightText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="20"
+                android:gravity="center_vertical" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/surveyLabel"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/survey_emp" />
+
+            <TextView
+                android:id="@+id/survey"
+                style="@style/MediumGrayLightText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="20"
+                android:gravity="center_vertical" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/empLabel"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"
+                android:text="@string/worker_emp" />
+
+            <TextView
+                android:id="@+id/employee"
+                style="@style/MediumGrayLightText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight="20"
+                android:gravity="center_vertical" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/showBtn"
+        style="@style/MediumBlackButton"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_gravity="end"
+        android:layout_marginTop="10dp"
+        android:padding="5dp"
+        android:text="@string/show_button" />
+</LinearLayout>

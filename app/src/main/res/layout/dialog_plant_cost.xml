@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhiteBackground"
+            android:padding="10dp"
+            android:layout_marginBottom="2dp">
+
+            <TextView
+                android:id="@+id/labor_cost"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="@string/labor_cost" />
+
+            <TextView
+                android:id="@+id/labor"
+                style="@style/MediumGrayLightText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginStart="10dp"
+                android:layout_weight="40"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/labor_unit"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical|end"
+                android:text="บาท/แปลง"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/colorWhiteBackground"
+            android:layout_marginBottom="2dp">
+
+            <TextView
+                android:id="@+id/repair_cost"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="@string/repair_cost" />
+
+            <TextView
+                android:id="@+id/repair"
+                style="@style/MediumGrayLightText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="20"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/repair_unit"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical|end"
+                android:text="บาท/แปลง"/>
+        </TableRow>
+
+        <TableRow
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorWhiteBackground"
+            android:layout_marginBottom="2dp">
+
+            <TextView
+                android:id="@+id/decadent_cost"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="@string/decadent_cost" />
+
+            <TextView
+                android:id="@+id/decadent"
+                style="@style/MediumGrayLightText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="20"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/decadent_unit"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical|end"
+                android:text="บาท/แปลง"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/colorWhiteBackground"
+            android:layout_marginBottom="2dp">
+
+            <TextView
+                android:id="@+id/fuel_cost"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="@string/fuel_cost" />
+
+            <TextView
+                android:id="@+id/fuel"
+                style="@style/MediumGrayLightText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="20"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/fuel_unit"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical|end"
+                android:text="บาท/แปลง"/>
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:background="@color/colorWhiteBackground"
+            android:layout_marginBottom="2dp">
+
+            <TextView
+                android:id="@+id/trans_cost"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:gravity="center_vertical"
+                android:text="@string/trans_cost" />
+
+            <TextView
+                android:id="@+id/trans"
+                style="@style/MediumGrayLightText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="20"
+                android:gravity="center_vertical" />
+
+            <TextView
+                android:id="@+id/trans_unit"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_weight="5"
+                android:gravity="center_vertical|end"
+                android:text="บาท/แปลง"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>

@@ -70,7 +70,7 @@ public class AccountingFilterActivity extends AppCompatActivity implements View.
                 if (selectedChoice.equals("farmer")) {
                     intent = new Intent(AccountingFilterActivity.this, ReceivableListActivity.class);
                 } else if (selectedChoice.equals("plant")) {
-                    intent = new Intent(AccountingFilterActivity.this, AccountingPlantActivity.class);
+
                 } else {
                     intent = new Intent(AccountingFilterActivity.this, AccountingModuleActivity.class);
                     intent.putExtra("DATE", date.getText().toString());

@@ -165,9 +165,10 @@ public class DashboardActivity extends AppCompatActivity
         return true;
     }
 
-    String[] button_title = {"ชาวไร่","สำรวจแปลง","จัดโซน","เลือกแปลงตัด","จัดคิว", "การเงิน","จัดการพนักงาน","บัญชีผู้ใช้งาน"};
-    int[] icon = {R.drawable.ic_color_farmer, R.drawable.ic_color_survey, R.drawable.ic_color_zone,
-            R.drawable.ic_color_selected, R.drawable.ic_color_cutter, R.drawable.ic_color_cost, R.drawable.ic_color_employee, R.drawable.ic_color_profile};
+    String[] button_title = {"ชาวไร่","สำรวจแปลง","เลือกแปลงตัด", "จัดโซน", "จัดคิว", "การเงิน","จัดการพนักงาน","บัญชีผู้ใช้งาน"};
+    int[] icon = {R.drawable.ic_color_farmer, R.drawable.ic_color_survey, R.drawable.ic_color_selected,
+            R.drawable.ic_color_zone, R.drawable.ic_color_cutter, R.drawable.ic_color_cost,
+            R.drawable.ic_color_employee, R.drawable.ic_color_profile};
 
     public void initCustomGrid() {
 
@@ -189,15 +190,15 @@ public class DashboardActivity extends AppCompatActivity
                         startActivity(intent);
                         break;
                     case 2:
-                        intent = new Intent(DashboardActivity.this, ZoneModuleActivity.class);
+                        String USERNAME = loadPreferencesContractor("username");
+                        String CONTRACTOR_ID = loadPreferencesContractor("CONTRACTOR_ID");
+                        intent = new Intent(DashboardActivity.this, CuttingPlantModuleActivity.class);
+                        intent.putExtra("AppURL", getString(R.string.web_app_url) + "Select.php?USERNAME=" +
+                                USERNAME + "&CONTRACTOR_ID=" + CONTRACTOR_ID);
                         startActivity(intent);
                         break;
                     case 3:
-                        String USERNAME = loadPreferencesContractor("username");
-                        String CONTRACTOR_ID = loadPreferencesContractor("CONTRACTOR_ID");
-                        intent = new Intent(DashboardActivity.this, WebContractorActivity.class);
-                        intent.putExtra("AppURL", getString(R.string.web_app_url) + "Select.php?USERNAME=" +
-                                USERNAME + "&CONTRACTOR_ID=" + CONTRACTOR_ID);
+                        intent = new Intent(DashboardActivity.this, ZoneModuleActivity.class);
                         startActivity(intent);
                         break;
                     case 4:

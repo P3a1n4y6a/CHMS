@@ -25,7 +25,7 @@ public class FarmerModuleActivity extends AppCompatActivity {
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new FarmerRequestFragment(), "รายการใหม่");
+        adapter.addFragment(new FarmerRequestFragment(), "แปลงใหม่");
         adapter.addFragment(new FarmerProcessFragment(), "คิวรับเหมา");
         adapter.addFragment(new FarmerAllFragment(), "ชาวไร่");
         viewPager.setAdapter(adapter);
@@ -37,8 +37,6 @@ public class FarmerModuleActivity extends AppCompatActivity {
             FarmerRequestFragment.web.goBack();
         }else if (FarmerProcessFragment.web.canGoBack()) {
             FarmerProcessFragment.web.goBack();
-        }else if (FarmerAllFragment.web.canGoBack()) {
-            FarmerAllFragment.web.goBack();
         }else if (!getFragmentManager().popBackStackImmediate()) {
             super.onBackPressed();
         }
