@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrayLightBackground"
+    android:orientation="vertical"
+    tools:context="com.example.viewz_pc.sugarcanemanagementsystem.ContractorShowProfileActivity">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/layout_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorAccent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/userImg"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/photo_user" />
+
+                <TextView
+                    android:id="@+id/fullname"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center_horizontal" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_general"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhiteBackground"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title_general"
+                    style="@style/MediumBoldGrayDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/general" />
+
+                <TextView
+                    android:id="@+id/companyLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/cane_company" />
+
+                <TextView
+                    android:id="@+id/company"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/addressLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/home" />
+
+                <TextView
+                    android:id="@+id/address"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/emailLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/email" />
+
+                <TextView
+                    android:id="@+id/email"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp" />
+
+                <TextView
+                    android:id="@+id/phoneLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/telephone" />
+
+                <TextView
+                    android:id="@+id/phone"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_condition"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorWhiteBackground"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title"
+                    style="@style/MediumBoldGrayDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/condition" />
+
+                <TextView
+                    android:id="@+id/requirement_detail"
+                    android:layout_width="match_parent"
+                    style="@style/MediumGrayLightText"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="20dp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="2dp"
+                android:paddingBottom="10dp"
+                android:background="@color/colorWhiteBackground"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title_ability"
+                    style="@style/MediumBoldGrayDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/ability" />
+
+                <TableLayout
+                    android:id="@+id/ability_table"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorWhiteBackground"
+                    android:shrinkColumns="2"
+                    android:stretchColumns="2">
+
+                    <TableRow
+                        android:id="@+id/tableRow1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/numCutterLabel"
+                            style="@style/SmallGreenDarkText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="@string/cutter_num" />
+
+                        <TextView
+                            android:id="@+id/numCutter"
+                            style="@style/MediumGrayLightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:gravity="center_horizontal"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/unitCutterLabel"
+                            style="@style/SmallGreenDarkText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:gravity="end"
+                            android:text="@string/car_unit" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/abilityCutterLabel"
+                            style="@style/SmallGreenDarkText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="@string/cutter_ability" />
+
+                        <TextView
+                            android:id="@+id/cutterBlank"
+                            style="@style/MediumGrayLightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:gravity="center_horizontal"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/cutterRateUnit"
+                            style="@style/SmallGreenDarkText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:gravity="end"
+                            android:text="ตัน/ไร่" />
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/numTractorLabel"
+                            style="@style/SmallGreenDarkText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="@string/tractor_num" />
+
+                        <TextView
+                            android:id="@+id/numTractor"
+                            style="@style/MediumGrayLightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:gravity="center_horizontal"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/unitTractorLabel"
+                            style="@style/SmallGreenDarkText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:gravity="end"
+                            android:text="@string/car_unit" />
+
+                    </TableRow>
+
+                    <TableRow
+                        android:id="@+id/tableRow4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp">
+
+                        <TextView
+                            android:id="@+id/abilityTractorLabel"
+                            style="@style/SmallGreenDarkText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="20dp"
+                            android:text="@string/tractor_ability" />
+
+                        <TextView
+                            android:id="@+id/tractorBlank"
+                            style="@style/MediumGrayLightText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="30dp"
+                            android:gravity="center_horizontal"
+                            android:text="0" />
+
+                        <TextView
+                            android:id="@+id/tractorRateUnit"
+                            style="@style/SmallGreenDarkText"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="20dp"
+                            android:layout_marginStart="20dp"
+                            android:gravity="end"
+                            android:text="ไร่/วัน" />
+
+                    </TableRow>
+                </TableLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_rate"
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorWhiteBackground"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title_rate"
+                    style="@style/MediumBoldGrayDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="เกณฑ์ค่าใช้จ่าย" />
+
+                <android.support.v7.widget.RecyclerView
+                    android:id="@+id/recyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/editBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_edit"
+        app:backgroundTint="@color/colorEditCompareButton"
+        app:fabSize="normal"
+        app:layout_anchor="@id/layout_image"
+        app:layout_anchorGravity="bottom|right|end" />
+
+</android.support.design.widget.CoordinatorLayout>

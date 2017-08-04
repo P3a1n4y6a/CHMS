@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorWhiteBackground"
+    android:padding="10dp"
+    tools:context="com.example.viewz_pc.sugarcanemanagementsystem.AccountingFilterActivity">
+
+    <TextView
+        android:id="@+id/dateTitle"
+        style="@style/MediumBoldGrayDarkText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ค้นหาวันและประเภทของค่าใช้จ่าย" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:weightSum="3"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/farmerRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:layout_marginTop="20dp"
+            style="@style/MediumGrayLightText"
+            android:text="ค่าใช้จ่ายตามชาวไร่" />
+
+        <RadioButton
+            android:id="@+id/plantRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/MediumGrayLightText"
+            android:text="ค่าใช้จ่ายตามแปลง" />
+
+        <RadioButton
+            android:id="@+id/cutterRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/MediumGrayLightText"
+            android:text="ค่าใช้จ่ายตามรถตัด" />
+
+        <RadioButton
+            android:id="@+id/tractorRadio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            style="@style/MediumGrayLightText"
+            android:text="ค่าใช้จ่ายตามแทรกเตอร์" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/dateLabel"
+        style="@style/SmallGreenDarkText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="วันที่ดำเนินการ" />
+
+    <TextView
+        android:id="@+id/date"
+        style="@android:style/Widget.Holo.Light.Spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="10dp"
+        android:editable="false"
+        android:textAppearance="@style/MediumBoldGrayLightText" />
+
+    <Button
+        android:id="@+id/searchBtn"
+        style="@style/MediumGreenButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/search_button" />
+</LinearLayout>

@@ -1,0 +1,49 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context="com.example.viewz_pc.sugarcanemanagementsystem.AccountingSummaryFragment">
+
+    <RelativeLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhiteBackground"
+        android:elevation="5dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/title"
+            style="@style/MediumBoldGrayDarkText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/compare_title" />
+
+        <TextView
+            android:id="@+id/from"
+            style="@style/SmallGrayLightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title"
+            android:layout_marginTop="10dp"
+            android:text="วันที่ดำเนินการ" />
+
+        <TextView
+            android:id="@+id/firstDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@id/from"
+            android:layout_marginStart="5dp"
+            android:layout_toRightOf="@id/from"
+            android:textAppearance="@style/MediumBoldGrayLightText" />
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+</LinearLayout>

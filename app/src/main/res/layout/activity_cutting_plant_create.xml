@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteBackground"
+    android:orientation="vertical"
+    tools:context="com.example.viewz_pc.sugarcanemanagementsystem.CuttingPlantCreateActivity">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/LargeGrayLightText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:text="สร้างคิวรับตัด" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <CheckBox
+            android:id="@+id/checkBoxA"
+            style="@style/MediumGrayLightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="เกรด A จำนวน " />
+
+        <TextView
+            android:id="@+id/gradeA"
+            style="@style/MediumBoldGrayLightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/unitA"
+            style="@style/MediumGrayLightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="ไร่" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <CheckBox
+            android:id="@+id/checkBoxB"
+            style="@style/MediumGrayLightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="เกรด B จำนวน " />
+
+        <TextView
+            android:id="@+id/gradeB"
+            style="@style/MediumBoldGrayLightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/unitB"
+            style="@style/MediumGrayLightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="ไร่" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <CheckBox
+            android:id="@+id/checkBoxC"
+            style="@style/MediumGrayLightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="เกรด C จำนวน" />
+
+        <TextView
+            android:id="@+id/gradeC"
+            style="@style/MediumBoldGrayLightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="0"/>
+
+        <TextView
+            android:id="@+id/unitC"
+            style="@style/MediumGrayLightText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="ไร่" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/createBtn"
+        style="@style/MediumGreenButton"
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="สร้าง" />
+</LinearLayout>

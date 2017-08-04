@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ผู้รับเหมา</string>
+    <string name="sub_app_name">แอปพลิเคชัน</string>
+    <string name="web_app_url">http://www.vzhome.org/CHMS/Native/</string>
+    <string name="username">ชื่อผู้ใช้งาน</string>
+    <string name="email">อีเมล</string>
+    <string name="confirm_password">รหัสยืนยัน</string>
+    <string name="password">รหัสผ่าน</string>
+    <string name="login_facebook">เข้าสู่ระบบด้วย Facebook</string>
+    <string name="login_google_mail">เข้าสู่ระบบด้วย Google mail</string>
+    <string name="login_failed">การเข้าสู่ระบบล้มเหลว กรุณาตรวจสอบอีเมลและรหัสผ่านอีกครั้ง</string>
+    <string name="login_success">สวัสดีคุณ</string>
+    <string name="register"><u>กดที่นี่เพื่อลงทะเบียน</u></string>
+    <string name="new_contractor_account"><u>สร้างบัญชีผู้รับเหมา</u></string>
+    <string name="dash_page">หน้าหลัก</string>
+
+    <string name="farmer_page">ข้อมูลชาวไร่</string>
+    <string name="survey_queue_page">การสำรวจและคิว</string>
+    <string name="edit_farmer_page">แก้ไขข้อมูลชาวไร่</string>
+    <string name="edit_survey_page">แก้ไขการสำรวจ</string>
+    <string name="edit_contractor_page">แก้ไขข้อมูลผู้ใช้งาน</string>
+    <string name="zone_page">โซน</string>
+    <string name="cost_page">ข้อมูลค่าใช้จ่าย</string>
+    <string name="profile_page">ข้อมูลส่วนตัวของผู้ใช้</string>
+    <string name="plant_data_page">ข้อมูลแปลง</string>
+    <string name="manage_employee">การจัดการลูกจ้าง</string>
+    <string name="add_emp_page">เพิ่มบัญชีของลูกจ้าง</string>
+    <string name="logout">ออกจากระบบ</string>
+
+    <string name="photo">เปลี่ยนรูปประจำตัว</string>
+    <string name="title">คำนำหน้าชื่อ</string>
+    <string name="first_name">ชื่อ</string>
+    <string name="last_name">นามสกุล</string>
+    <string name="staff_id">หมายเลขผู้ดูแล</string>
+    <string name="company">บริษัทผู้รับเหมา</string>
+    <string name="depart">แผนก</string>
+    <string name="search_button">ค้นหา</string>
+
+    <string name="general">ข้อมูลทั่วไป</string>
+    <string name="name">ชื่อ:</string>
+    <string name="farmer_id">หมายเลข:</string>
+    <string name="employee_id">หมายเลข:</string>
+    <string name="employee_password">รหัสผ่าน:</string>
+    <string name="home">ที่อยู่</string>
+    <string name="address">บ้านเลขที่-ถนน:</string>
+    <string name="sub_district">ตำบล:</string>
+    <string name="district">อำเภอ:</string>
+    <string name="province">จังหวัด:</string>
+    <string name="zip_code">รหัสไปรษณีย์:</string>
+    <string name="farmer_tel">เบอร์โทรชาวไร่:</string>
+    <string name="chief_name">หัวหน้าตำบล:</string>
+    <string name="chief_tel">เบอร์โทรหัวหน้าตำบล:</string>
+    <string name="telephone">เบอร์โทรศัพท์</string>
+    <string name="condition">เงื่อนไขในการรับแปลง</string>
+    <string name="area">พื้นที่</string>
+    <string name="rate_tons_area">อัตรา</string>
+    <string name="status">สถานะคิว</string>
+
+    <string name="repair_cost">3. ราคาอะไหล่รถตัด,\n เทรลเลอร์, ภาษี,\n วัสดุอื่นๆ</string>
+    <string name="transport_cost">6. ค่าเหมาจ่ายใน\nการขนย้ายรถ</string>
+    <string name="fuel_cutter_cost">7. ราคาน้ำมันรถตัด</string>
+    <string name="fuel_rate_use">8. อัตราการใช้\nน้ำมันรถตัดอ้อย</string>
+
+    <string name="error_blank">กรุณากรอกข้อมูล</string>
+    <string name="error_suggest">คุณไม่ได้กรอกหมายเลขพนักงานหรือรหัสผ่าน</string>
+    <string name="error_unconnect">คุณไม่ได้เชื่อมต่อเครือข่ายอินเตอร์เน็ต</string>
+    <string name="zone_dialog">กรุณาตั้งชื่อโซน</string>
+    <string name="selected_depart">เลือกแผนก</string>
+    <string name="survey_emp">คนสำรวจ</string>
+    <string name="cutter_emp">รถตัด</string>
+    <string name="tractor_emp">รถแทรกเตอร์</string>
+    <string name="assert_rm">คุณต้องการลบใช่หรือไม่</string>
+
+    <string name="login_button">เข้าสู่ระบบ</string>
+    <string name="show_button">แสดงรายละเอียด</string>
+    <string name="hide_button">ซ่อนรายละเอียด</string>
+    <string name="edit_button">แก้ไข</string>
+    <string name="cancel_button">ยกเลิก</string>
+    <string name="change_button">เปลี่ยนแปลง</string>
+    <string name="save_button">บันทึก</string>
+    <string name="update_button">อัพเดท</string>
+    <string name="compare_button">เปรียบเทียบราคาประมาณ</string>
+    <string name="yes_button">ใช่</string>
+    <string name="no_button">ไม่</string>
+    <string name="accept_button">ยอมรับ</string>
+    <string name="decline_button">ปฎิเสธ</string>
+
+    <string name="plant">แปลงทั้งหมดของชาวไร่</string>
+    <string name="plant_id">หมายเลขแปลง:</string>
+    <string name="survey_date">วันที่สำรวจ:</string>
+    <string name="qc">คุณภาพ:</string>
+    <string name="output">ผลผลิต(ตัน):</string>
+    <string name="n_a">ไม่มีข้อมูล</string>
+
+    <string name="ability">ความสามารถของรถ</string>
+    <string name="cutter_ability">ความสามารถของรถตัด</string>
+    <string name="tractor_ability">ความสามารถของรถแทรกเตอร์</string>
+    <string name="cutter_num">จำนวนรถตัด</string>
+    <string name="tractor_num">จำนวนรถแทรกเตอร์</string>
+    <string name="tractor_equip">อุปกรณ์ของรถตัด</string>
+    <string name="equip_1">ไถบุกเบิก</string>
+    <string name="equip_2">พรวน</string>
+    <string name="equip_4">เครื่องปลูกอ้อย</string>
+    <string name="equip_5">เครื่องพ่นสารเคมี</string>
+    <string name="equip_6">ไถระเบิดดินดาน</string>
+    <string name="equip_7">พรวนอเนกประสงค์</string>
+    <string name="equip_8">เครื่องยกร่อง</string>
+    <string name="equip_9">เครื่องใส่ปุ๋ย</string>
+    <string name="equip_10">rotary พรวนดิน</string>
+    <string name="equip_11">เครื่องผ่าร่องรถเล็ก</string>
+
+    <string name="zone_id">หมายเลขโซน:</string>
+    <string name="zone_name">ชื่อโซน:</string>
+    <string name="zone_position">ตำแหน่ง:</string>
+    <string name="cane_company">บริษัทอ้อย</string>
+    <string name="plant_address">ที่อยู่ของแปลง</string>
+    <string name="plant_info">ข้อมูลแปลง</string>
+    <string name="explorer_chief">หัวหน้าสำรวจ</string>
+    <string name="explorer_chief_tel">เบอร์หัวหน้าสำรวจ</string>
+    <string name="grade">เกรด</string>
+    <string name="qc_output">คุณภาพ</string>
+    <string name="title_pin">แปลงนี้</string>
+    <string name="evaluation">ผลการประเมิน</string>
+    <string name="no_evaluation">ยังไม่มีผลการประเมิน</string>
+    <string name="cut_id">หมายเลขรถตัด:</string>
+    <string name="tractor_id">หมายเลขรถบรรทุก:</string>
+    <string name="total_cut">น้ำหนักและค่าใช้จ่ายรวม</string>
+    <string name="total_time">เวลาและค่าใช้จ่ายรวม</string>
+    <string name="cut_no">หมายเลขลำดับรถตัด:</string>
+    <string name="tractor_no">หมายเลขลำดับรถบรรทุก:</string>
+    <string name="harvest_date">วันที่ตัดอ้อย:</string>
+    <string name="tractor_date">วันที่บรรทุก:</string>
+    <string name="weight">น้ำหนัก</string>
+    <string name="work_time">ชั่วโมงทำงาน</string>
+    <string name="fuel_content">ปริมาณน้ำมัน</string>
+    <string name="fuel_cost">ค่าน้ำมัน</string>
+    <string name="repair">ซ่อมแซม</string>
+    <string name="compare_title">ราคาจริงเปรียบเทียบกับราคาประมาณ</string>
+
+    <string name="unit">หน่วย</string>
+    <string name="ton_unit">ตัน</string>
+    <string name="hour_unit">ชั่วโมง</string>
+    <string name="litre_unit">ลิตร</string>
+    <string name="baht_unit">บาท</string>
+    <string name="car_unit">คัน</string>
+    <string name="events">เหตุการณ์</string>
+    <string name="fill_fuel">เติมน้ำมัน</string>
+    <string name="harvest">ตัดอ้อย</string>
+
+    <string name="event_detail">เหตุการณ์:</string>
+    <string name="content">ปริมาณ:</string>
+    <string name="cost">ค่าใช้จ่าย:</string>
+
+    <string name="survey_tap">การสำรวจ</string>
+    <string name="harvest_tap">คิวรถตัดอ้อย</string>
+    <string name="tractor_tap">คิวรถแทรกเตอร์</string>
+    <string name="harvest_cost">รถตัดอ้อย</string>
+    <string name="tractor_cost">รถแทรกเตอร์</string>
+
+    <string name="cost_info">ข้อมูลค่าใช้จ่าย</string>
+    <string name="harvest_summary">สรุปน้ำหนักและค่าใช้จ่ายจริงทั้งหมด</string>
+    <string name="tractor_summary">สรุปชั่วโมงและค่าใช้จ่ายจริงทั้งหมด</string>
+    <string name="cutter_order">หมายเลขลำดับรถตัด:</string>
+    <string name="tractor_order">หมายเลขลำดับรถแทรกเตอร์:</string>
+    <string name="from">จาก</string>
+    <string name="to">ถึง</string>
+    <string name="weight_unit">น้ำหนัก (ตัน)</string>
+    <string name="fuel_content_unit">ปริมาณน้ำมัน (ลิตร)</string>
+    <string name="fuel_cost_unit">ราคาน้ำมัน (บาท)</string>
+    <string name="repair_unit">ค่าซ่อมแซม (บาท)</string>
+    <string name="work_time_unit">ชั่วโมงทำงาน (ชั่วโมง)</string>
+    <string name="real">ค่าจริง</string>
+    <string name="estimate">ค่าประเมิน</string>
+    <string name="percent">ความคลาดเคลื่อน</string>
+
+    <string-array name="sort_by">
+        <item>หมายเลขชาวไร่</item>
+        <item>หมายเลขแปลง</item>
+    </string-array>
+
+    <string-array name="grade">
+        <item>ไม่มีเกรด</item>
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+    </string-array>
+
+    <string-array name="real_qc">
+        <item>ผ่าน</item>
+        <item>ไม่ผ่าน</item>
+        <item>ไม่มีคิว</item>
+    </string-array>
+
+    <string-array name="criteria">
+        <item>1. ผลผลิตอ้อยในแปลง(ตัน/ไร่)</item>
+        <item>2. ความยาวร่องอ้อย(เมตร)</item>
+        <item>3. ระยะห่างระหว่างแถวอ้อย(เมตร)</item>
+        <item>4.1 ความกว้างข้างแปลง(เมตร)</item>
+        <item>4.2 ความกว้างหัวแปลง(เมตร)</item>
+        <item>4.3 ความกว้างท้ายแปลง(เมตร)</item>
+        <item>5. จำนวน ต้นไม้/ตอ/หิน</item>
+        <item>6. สิ่งกีดขวางอื่นๆ</item>
+        <item>7. ไม่เคยปลูกหรือเป็นแปลงยูคาเก่ามาก่อน</item>
+        <item>8. พื้นร่องเรียบ</item>
+        <item>9. การกลบโคน(เซนติเมตร)</item>
+        <item>10. วัชพืช</item>
+        <item>11. กออ้อยตั้งตรง/ไม่หักล้ม</item>
+        <item>12. พื้นที่ไม่เอียง/ราบเรียบ</item>
+        <item>13. ไม่มีน้ำแช่ขัง</item>
+        <item>14. อ้อยร่องเดี่ยวหรือร่องคู่รถตัดตัดได้</item>
+        <item>15. เส้นทางเข้าแปลงอ้อยสะดวก</item>
+        <item>16. ระยะทางจากโรงงาน(กิโลเมตร)</item>
+        <item>17. จำนวนพื้นที่(ไร่)</item>
+    </string-array>
+</resources>

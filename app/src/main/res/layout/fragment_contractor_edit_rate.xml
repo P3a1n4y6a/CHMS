@@ -1,0 +1,378 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhiteBackground"
+    tools:context="com.example.viewz_pc.sugarcanemanagementsystem.ContractorEditRateFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                style="@style/LargeDarkGrayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="เกณฑ์ค่าใช้จ่าย" />
+
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorSearchDateSelect"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/laborText"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="1. ค่าแรง" />
+
+                    <EditText
+                        android:id="@+id/laborEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:text="300" />
+
+                    <TextView
+                        android:id="@+id/laborUnit"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="บาท/ตัน" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/productText"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="2. ค่าหัวตัน" />
+
+                    <EditText
+                        android:id="@+id/productEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:text="20" />
+
+                    <TextView
+                        android:id="@+id/productUnit"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="บาท/ตัน" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorSearchDateSelect"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/repairText"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/repair_cost" />
+
+                    <EditText
+                        android:id="@+id/repairEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:text="3600000" />
+
+                    <TextView
+                        android:id="@+id/repairUnit"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/baht_unit" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/originText"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="4. ค่าเริ่มแรก" />
+
+                    <EditText
+                        android:id="@+id/originEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:text="50000" />
+
+                    <TextView
+                        android:id="@+id/originUnit"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/baht_unit" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorSearchDateSelect"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/ageText"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="5. อายุการใช้งาน" />
+
+                    <EditText
+                        android:id="@+id/ageEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:text="3" />
+
+                    <TextView
+                        android:id="@+id/ageUnit"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="วัน" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/transText"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/transport_cost" />
+
+                    <EditText
+                        android:id="@+id/transEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:text="500" />
+
+                    <TextView
+                        android:id="@+id/transUnit"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="บาท/รอบ" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:background="@color/colorSearchDateSelect"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/fuelCostText"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/fuel_cutter_cost" />
+
+                    <EditText
+                        android:id="@+id/fuelCostEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:text="23.50" />
+
+                    <TextView
+                        android:id="@+id/fuelCostUnit"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="บาท/ลิตร" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/fuelRateText"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="@string/fuel_rate_use" />
+
+                    <EditText
+                        android:id="@+id/fuelRateEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:text="1.5" />
+
+                    <TextView
+                        android:id="@+id/fuelRateUnit"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="ลิตร/ตัน" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/areaText"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="9. พื้นที่" />
+
+                    <EditText
+                        android:id="@+id/areaEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical"
+                        android:inputType="number"
+                        android:text="25" />
+
+                    <TextView
+                        android:id="@+id/areaUnit"
+                        style="@style/MediumGrayLightText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:text="บาท/ไร่" />
+                </TableRow>
+            </TableLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorSearchDateSelect"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/clearBtn"
+                    style="@style/MediumOrangeButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="2"
+                    android:text="ล้างค่า" />
+
+                <Button
+                    android:id="@+id/saveBtn"
+                    style="@style/MediumGreenButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:layout_weight="1"
+                    android:text="@string/save_button" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+</android.support.constraint.ConstraintLayout>

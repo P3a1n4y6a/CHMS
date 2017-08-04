@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorGrayLightBackground"
+    android:orientation="vertical"
+    tools:context="com.example.viewz_pc.sugarcanemanagementsystem.ShowPlantDetailActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorWhiteBackground"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/plantLabel"
+            style="@style/SmallGreenDarkText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/plant_id" />
+
+        <TextView
+            android:id="@+id/plant"
+            style="@style/MediumGrayLightText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/farmerLabel"
+            style="@style/SmallGreenDarkText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/farmer_id" />
+
+        <TextView
+            android:id="@+id/farmer"
+            style="@style/MediumGrayLightText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:id="@+id/addressLabel"
+            style="@style/SmallGreenDarkText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/home" />
+
+        <TextView
+            android:id="@+id/address"
+            style="@style/MediumGrayLightText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/compareLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:background="@color/colorGrayLightBackground"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginEnd="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorWhiteBackground"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/areaLabel"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="@string/area" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/area"
+                style="@style/LargeGrayLightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="1"
+                autofit:minTextSize="16sp" />
+
+            <TextView
+                android:id="@+id/unitAreaLabel"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="ไร่" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="1dp"
+            android:layout_marginStart="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorWhiteBackground"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/rateLabel"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="@string/rate_tons_area" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/rate"
+                style="@style/LargeGrayLightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center"
+                android:maxLines="1"
+                autofit:minTextSize="16sp" />
+
+            <TextView
+                android:id="@+id/unitLabel"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:gravity="center_horizontal"
+                android:text="ตัน/ไร่" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="center"
+            android:layout_marginStart="1dp"
+            android:layout_weight="1"
+            android:background="@color/colorWhiteBackground"
+            android:orientation="vertical"
+            android:padding="4dp">
+
+            <TextView
+                android:id="@+id/statusLabel"
+                style="@style/SmallGreenDarkText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:gravity="center_horizontal"
+                android:text="@string/status" />
+
+            <me.grantland.widget.AutofitTextView
+                android:id="@+id/status"
+                style="@style/LargeGrayLightText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:maxLines="1"
+                autofit:minTextSize="16sp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

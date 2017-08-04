@@ -1,0 +1,251 @@
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.viewz_pc.sugarcanemanagementsystem.ContractorEditProfileFragment">
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorWhiteBackground"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/title_general"
+                    style="@style/MediumBoldGrayDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/general" />
+
+                <TextView
+                    android:id="@+id/titleLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/title" />
+
+                <EditText
+                    android:id="@+id/title"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <TextView
+                    android:id="@+id/firstnameLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/first_name" />
+
+                <EditText
+                    android:id="@+id/firstname"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <TextView
+                    android:id="@+id/lastnameLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/last_name" />
+
+                <EditText
+                    android:id="@+id/lastname"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <TextView
+                    android:id="@+id/companyLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/company" />
+
+                <EditText
+                    android:id="@+id/company"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <TextView
+                    android:id="@+id/emailLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/email" />
+
+                <EditText
+                    android:id="@+id/email"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <TextView
+                    android:id="@+id/phoneLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/telephone" />
+
+                <EditText
+                    android:id="@+id/phone"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <TextView
+                    android:id="@+id/addressLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/address" />
+
+                <EditText
+                    android:id="@+id/address"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <TextView
+                    android:id="@+id/subDistrictLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/sub_district" />
+
+                <EditText
+                    android:id="@+id/subDistrict"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <TextView
+                    android:id="@+id/districtLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/district" />
+
+                <EditText
+                    android:id="@+id/district"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <TextView
+                    android:id="@+id/provinceLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/province" />
+
+                <EditText
+                    android:id="@+id/province"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+
+                <TextView
+                    android:id="@+id/postCodeLabel"
+                    style="@style/SmallGreenDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/zip_code" />
+
+                <EditText
+                    android:id="@+id/postCode"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="30dp"
+                    android:layout_marginStart="30dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:background="@color/colorWhiteBackground"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/title_edit_confirm_password"
+                    style="@style/MediumBoldGrayDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/confirm_password" />
+                <EditText
+                    android:id="@+id/edit_confirm_password"
+                    style="@style/MediumGrayLightText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="textPassword"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginEnd="30dp"/>
+                <Button
+                    android:id="@+id/saveBtn"
+                    style="@style/MediumGreenButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="20dp"
+                    android:text="@string/save_button" />
+            </LinearLayout>
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
+</android.support.constraint.ConstraintLayout>

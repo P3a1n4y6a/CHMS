@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.viewz_pc.sugarcanemanagementsystem">
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <permission
+        android:name="com.example.viewz_pc.sugarcanemanagementsystem.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+
+    <uses-permission android:name="com.example.viewz_pc.sugarcanemanagementsystem.permission.MAPS_RECEIVE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <!--
+         The ACCESS_COARSE/FINE_LOCATION permissions are not required to use
+         Google Maps Android API v2, but you must specify either coarse or fine
+         location permissions for the 'MyLocation' functionality. 
+    -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/contractor_icon"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/contractor_icon"
+        android:screenOrientation="portrait"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LoginActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DashboardActivity"
+            android:label="@string/dash_page"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar">
+        </activity>
+        <activity
+            android:name=".FarmerModuleActivity"
+            android:label="@string/farmer_page"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".FarmerRequestModuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowPlantDetailActivity"
+            android:label="@string/plant_data_page"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ContractorShowProfileActivity"
+            android:label="@string/profile_page" />
+        <activity
+            android:name=".SurveyModuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ShowSurveyResultActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".SurveyAssignmentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".EmployeeModuleActivity"
+            android:label="@string/manage_employee"
+            android:screenOrientation="portrait" />
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/google_maps_key" />
+
+        <activity
+            android:name=".ZoneModuleActivity"
+            android:label="@string/title_activity_zone_module"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CuttingPlantModuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CuttingQueueModuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AccountingModuleActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CuttingPlantCreateActivity"
+            android:label="จัดคิวตัด"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".CuttingPlantListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ReceivableListActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".WebContractorActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AccountingFilterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AccountingHarvesterActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".AccountingPlantActivity"
+            android:screenOrientation="portrait" />
+
+        <activity
+            android:name=".ContractorSignUpActivity"
+            android:screenOrientation="portrait"
+            android:label="@string/new_contractor_account"/>
+        <activity
+            android:name=".ContractorEditModuleActivity"
+            android:screenOrientation="portrait">
+
+        </activity>
+    </application>
+
+</manifest>

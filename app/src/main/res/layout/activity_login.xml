@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.viewz_pc.sugarcanemanagementsystem.LoginActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="30dp"
+        android:layout_marginStart="30dp"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/logoImg"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/contractor_icon" />
+
+        <TextView
+            android:id="@+id/bigAppName"
+            style="@style/LargeDarkGrayText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/sub_app_name" />
+
+        <TextView
+            android:id="@+id/subAppName"
+            style="@style/MediumBoldGrayDarkText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center_horizontal"
+            android:text="@string/app_name" />
+
+        <EditText
+            android:id="@+id/username"
+            style="@style/MediumGrayLightText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:drawableStart="@drawable/ic_user"
+            android:hint="@string/username" />
+
+        <EditText
+            android:id="@+id/password"
+            style="@style/MediumGrayLightText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:drawableStart="@drawable/ic_password"
+            android:hint="@string/password"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/loginBtn"
+            style="@style/MediumGreenButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="ลงชื่อเข้าใช้งาน" />
+
+        <TextView
+            android:id="@+id/signupLink"
+            style="@style/MediumGreenDarkText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center_horizontal"
+            android:text="@string/register" />
+    </LinearLayout>
+</LinearLayout>
