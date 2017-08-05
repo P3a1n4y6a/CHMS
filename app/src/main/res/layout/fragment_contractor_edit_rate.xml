@@ -16,12 +16,12 @@
 
             <TextView
                 android:id="@+id/title"
-                style="@style/LargeDarkGrayText"
+                style="@style/MediumBoldGrayDarkText"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
                 android:padding="10dp"
-                android:text="เกณฑ์ค่าใช้จ่าย" />
+                android:text="เกณฑ์ของรถตัดและรถแทรกเตอร์" />
 
             <TableLayout
                 android:layout_width="match_parent"
@@ -36,10 +36,11 @@
 
                     <TextView
                         android:id="@+id/laborText"
-                        style="@style/MediumGrayLightText"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
+                        android:layout_weight="20"
                         android:text="1. ค่าแรง" />
 
                     <EditText
@@ -50,17 +51,17 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:inputType="number"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
                         android:text="300" />
 
                     <TextView
                         android:id="@+id/laborUnit"
-                        style="@style/MediumGrayLightText"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="บาท/ตัน" />
+                        android:gravity="center_vertical|end"
+                        android:text="บาท/วัน" />
                 </TableRow>
 
                 <TableRow
@@ -70,31 +71,32 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/productText"
-                        style="@style/MediumGrayLightText"
+                        android:id="@+id/costWeightText"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
+                        android:layout_weight="20"
                         android:text="2. ค่าหัวตัน" />
 
                     <EditText
-                        android:id="@+id/productEdit"
+                        android:id="@+id/costWeightEdit"
                         style="@style/MediumBoldGrayDarkText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:inputType="number"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
                         android:text="20" />
 
                     <TextView
-                        android:id="@+id/productUnit"
-                        style="@style/MediumGrayLightText"
+                        android:id="@+id/costWeightUnit"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
+                        android:gravity="center_vertical|end"
                         android:text="บาท/ตัน" />
                 </TableRow>
 
@@ -106,32 +108,33 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/repairText"
-                        style="@style/MediumGrayLightText"
+                        android:id="@+id/costAreaText"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="@string/repair_cost" />
+                        android:layout_weight="20"
+                        android:text="3. ค่าต่อพื้นที่" />
 
                     <EditText
-                        android:id="@+id/repairEdit"
+                        android:id="@+id/costAreaEdit"
                         style="@style/MediumBoldGrayDarkText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:inputType="number"
-                        android:text="3600000" />
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
+                        android:text="20" />
 
                     <TextView
-                        android:id="@+id/repairUnit"
-                        style="@style/MediumGrayLightText"
+                        android:id="@+id/costAreaUnit"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="@string/baht_unit" />
+                        android:gravity="center_vertical|end"
+                        android:text="บาท/ไร่" />
                 </TableRow>
 
                 <TableRow
@@ -141,103 +144,106 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/originText"
-                        style="@style/MediumGrayLightText"
+                        android:id="@+id/repairCutterText"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="4. ค่าเริ่มแรก" />
+                        android:layout_weight="20"
+                        android:text="4. ค่าบำรุงรถตัด" />
 
                     <EditText
-                        android:id="@+id/originEdit"
+                        android:id="@+id/repairCutterEdit"
                         style="@style/MediumBoldGrayDarkText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
+                        android:text="360000" />
+
+                    <TextView
+                        android:id="@+id/repairCutterUnit"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|end"
+                        android:text="บาท/ปี" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorSearchDateSelect"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/repairTractorText"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:inputType="number"
+                        android:layout_weight="20"
+                        android:text="5. ค่าบำรุงรถแทรกเตอร์" />
+
+                    <EditText
+                        android:id="@+id/repairTractorEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
+                        android:text="24000" />
+
+                    <TextView
+                        android:id="@+id/repairTractorUnit"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|end"
+                        android:text="บาท/ปี" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/weightYearText"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:layout_weight="20"
+                        android:text="6. ผลิตอ้อย" />
+
+                    <EditText
+                        android:id="@+id/weightYearEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
                         android:text="50000" />
 
                     <TextView
-                        android:id="@+id/originUnit"
-                        style="@style/MediumGrayLightText"
+                        android:id="@+id/weightYearUnit"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="@string/baht_unit" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/colorSearchDateSelect"
-                    android:gravity="start"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:id="@+id/ageText"
-                        style="@style/MediumGrayLightText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="5. อายุการใช้งาน" />
-
-                    <EditText
-                        android:id="@+id/ageEdit"
-                        style="@style/MediumBoldGrayDarkText"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:inputType="number"
-                        android:text="3" />
-
-                    <TextView
-                        android:id="@+id/ageUnit"
-                        style="@style/MediumGrayLightText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="วัน" />
-                </TableRow>
-
-                <TableRow
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="start"
-                    android:padding="10dp">
-
-                    <TextView
-                        android:id="@+id/transText"
-                        style="@style/MediumGrayLightText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="@string/transport_cost" />
-
-                    <EditText
-                        android:id="@+id/transEdit"
-                        style="@style/MediumBoldGrayDarkText"
-                        android:layout_width="fill_parent"
-                        android:layout_height="fill_parent"
-                        android:layout_marginEnd="10dp"
-                        android:layout_marginStart="10dp"
-                        android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:inputType="number"
-                        android:text="500" />
-
-                    <TextView
-                        android:id="@+id/transUnit"
-                        style="@style/MediumGrayLightText"
-                        android:layout_width="wrap_content"
-                        android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="บาท/รอบ" />
+                        android:gravity="center_vertical|end"
+                        android:text="ตัน/ปี" />
                 </TableRow>
 
                 <TableRow
@@ -248,32 +254,179 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/fuelCostText"
-                        style="@style/MediumGrayLightText"
+                        android:id="@+id/areaYearText"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="@string/fuel_cutter_cost" />
+                        android:layout_weight="20"
+                        android:text="7. ผลิตอ้อย" />
 
                     <EditText
-                        android:id="@+id/fuelCostEdit"
+                        android:id="@+id/areaYearEdit"
                         style="@style/MediumBoldGrayDarkText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:inputType="number"
-                        android:text="23.50" />
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
+                        android:text="50000" />
 
                     <TextView
-                        android:id="@+id/fuelCostUnit"
-                        style="@style/MediumGrayLightText"
+                        android:id="@+id/areaYearUnit"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|end"
+                        android:text="ไร่/ปี" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/cutterCostText"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="บาท/ลิตร" />
+                        android:layout_weight="20"
+                        android:text="8. ซื้อรถตัดอ้อย" />
+
+                    <EditText
+                        android:id="@+id/cutterCostEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
+                        android:text="50000" />
+
+                    <TextView
+                        android:id="@+id/cutterCostUnit"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|end"
+                        android:text="บาท/ปี" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorSearchDateSelect"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tractorCostEditText"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:layout_weight="20"
+                        android:gravity="center_vertical"
+                        android:text="9. ซื้อรถแทรกเตอร์" />
+
+                    <EditText
+                        android:id="@+id/tractorCostEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
+                        android:text="50000" />
+
+                    <TextView
+                        android:id="@+id/tractorCostUnit"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|end"
+                        android:text="บาท/ปี" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/cutterLifeText"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:layout_weight="20"
+                        android:text="10. อายุการใช้งานรถตัดอ้อย" />
+
+                    <EditText
+                        android:id="@+id/cutterLifeEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
+                        android:text="50000" />
+
+                    <TextView
+                        android:id="@+id/cutterLifeUnit"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|end"
+                        android:text="ปี" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorSearchDateSelect"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/tractorLifeText"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical"
+                        android:layout_weight="20"
+                        android:text="11. อายุการใช้งานรถแทรกเตอร์" />
+
+                    <EditText
+                        android:id="@+id/tractorLifeEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
+                        android:text="50000" />
+
+                    <TextView
+                        android:id="@+id/tractorLifeUnit"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|end"
+                        android:text="ปี" />
                 </TableRow>
 
                 <TableRow
@@ -284,11 +437,12 @@
 
                     <TextView
                         android:id="@+id/fuelRateText"
-                        style="@style/MediumGrayLightText"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="@string/fuel_rate_use" />
+                        android:layout_weight="20"
+                        android:text="12. อัตราน้ำมันรถตัดอ้อย" />
 
                     <EditText
                         android:id="@+id/fuelRateEdit"
@@ -298,17 +452,54 @@
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:inputType="number"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
                         android:text="1.5" />
 
                     <TextView
                         android:id="@+id/fuelRateUnit"
-                        style="@style/MediumGrayLightText"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|end"
+                        android:text="ลิตร/ตัน" />
+                </TableRow>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/colorSearchDateSelect"
+                    android:gravity="start"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/fuelCostText"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="ลิตร/ตัน" />
+                        android:layout_weight="20"
+                        android:text="13. ค่าน้ำมัน" />
+
+                    <EditText
+                        android:id="@+id/fuelCostEdit"
+                        style="@style/MediumBoldGrayDarkText"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:layout_marginEnd="10dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_weight="1"
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberDecimal"
+                        android:text="23.50" />
+
+                    <TextView
+                        android:id="@+id/fuelCostUnit"
+                        style="@style/MediumGreenDarkText"
+                        android:layout_width="wrap_content"
+                        android:layout_height="fill_parent"
+                        android:gravity="center_vertical|end"
+                        android:text="บาท/ลิตร" />
                 </TableRow>
 
                 <TableRow
@@ -318,32 +509,33 @@
                     android:padding="10dp">
 
                     <TextView
-                        android:id="@+id/areaText"
-                        style="@style/MediumGrayLightText"
+                        android:id="@+id/transText"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
                         android:gravity="center_vertical"
-                        android:text="9. พื้นที่" />
+                        android:layout_weight="20"
+                        android:text="14. ค่าขนย้ายแปลง" />
 
                     <EditText
-                        android:id="@+id/areaEdit"
+                        android:id="@+id/transEdit"
                         style="@style/MediumBoldGrayDarkText"
                         android:layout_width="fill_parent"
                         android:layout_height="fill_parent"
                         android:layout_marginEnd="10dp"
                         android:layout_marginStart="10dp"
                         android:layout_weight="1"
-                        android:gravity="center_vertical"
-                        android:inputType="number"
-                        android:text="25" />
+                        android:gravity="center_vertical|end"
+                        android:inputType="numberSigned"
+                        android:text="500" />
 
                     <TextView
-                        android:id="@+id/areaUnit"
-                        style="@style/MediumGrayLightText"
+                        android:id="@+id/transUnit"
+                        style="@style/MediumGreenDarkText"
                         android:layout_width="wrap_content"
                         android:layout_height="fill_parent"
-                        android:gravity="center_vertical"
-                        android:text="บาท/ไร่" />
+                        android:gravity="center_vertical|end"
+                        android:text="บาท/ครั้ง" />
                 </TableRow>
             </TableLayout>
 

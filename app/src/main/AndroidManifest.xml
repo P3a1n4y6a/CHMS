@@ -98,7 +98,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".CuttingQueueModuleActivity"
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:label="การจัดคิวรถตัดอ้อย"/>
         <activity
             android:name=".AccountingModuleActivity"
             android:screenOrientation="portrait" />
@@ -121,12 +122,15 @@
         <activity
             android:name=".AccountingHarvesterActivity"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".ContractorSignUpActivity"
             android:label="@string/new_contractor_account"
             android:screenOrientation="portrait" />
+
         <activity
             android:name=".ContractorEditModuleActivity"
+            android:label="แก้ไขข้อมูลและเกณฑ์"
             android:screenOrientation="portrait"></activity>
 
         <activity

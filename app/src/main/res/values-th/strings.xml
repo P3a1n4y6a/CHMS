@@ -97,8 +97,8 @@
     <string name="n_a">ไม่มีข้อมูล</string>
 
     <string name="ability">ความสามารถของรถ</string>
-    <string name="cutter_ability">ความสามารถของรถตัด</string>
-    <string name="tractor_ability">ความสามารถของรถแทรกเตอร์</string>
+    <string name="cutter_ability">ความสามารถรถตัด</string>
+    <string name="tractor_ability">ความสามารถรถแทรกเตอร์</string>
     <string name="cutter_num">จำนวนรถตัด</string>
     <string name="tractor_num">จำนวนรถแทรกเตอร์</string>
     <string name="tractor_equip">อุปกรณ์ของรถตัด</string>
@@ -178,6 +178,7 @@
     <string name="percent">ความคลาดเคลื่อน</string>
 
     <string name="labor_cost">ค่าแรงงาน</string>
+    <string name="repair_plant_cost">ค่าซ่อมบำรุง</string>
     <string name="decadent_cost">ค่าเสื่อมราคา</string>
     <string name="trans_cost">ค่าขนย้าย</string>
 

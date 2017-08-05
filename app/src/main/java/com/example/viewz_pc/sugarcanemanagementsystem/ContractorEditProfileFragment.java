@@ -33,10 +33,10 @@ public class ContractorEditProfileFragment extends Fragment implements View.OnCl
     private View contractorView;
     private EditText editText;
     private int[] editText_id = {R.id.title, R.id.firstname, R.id.lastname, R.id.company, R.id.email,
-            R.id.phone, R.id.address, R.id.subDistrict, R.id.district, R.id.province, R.id.postCode};
+            R.id.phone, R.id.address, R.id.subDistrict, R.id.district, R.id.province, R.id.postCode, R.id.textArea};
     private String Url = null;
     private String USERNAME,  CONTRACTOR_ID, CONFIRM_PASSWORD, DEPARTMENT, PASSWORD, COMPANY_NAME, EMAIL, TITLE_NAME, FIRST_NAME,
-            LAST_NAME, PHONE, ADDRESS, SUB_DISTRICT, DISTRICT, PROVINCE, POSTCODE;
+            LAST_NAME, PHONE, ADDRESS, SUB_DISTRICT, DISTRICT, PROVINCE, POSTCODE, REQUIREMENT_DETAIL;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -50,9 +50,9 @@ public class ContractorEditProfileFragment extends Fragment implements View.OnCl
     }
 
     public void initPreviousData() {
-        String profile = loadPreferencesContractor();
+        String profile = loadPreferencesContractor("SEND_TO_EDIT");
         Log.d("Edit profile edit", profile);
-        String[] edit_data = new String[11];
+        String[] edit_data = new String[12];
         JSONArray jsonArray = null;
         try {
             if (!profile.equals("[]")) {
@@ -70,6 +70,7 @@ public class ContractorEditProfileFragment extends Fragment implements View.OnCl
                 edit_data[8] = jsonObject.getString("DISTRICT");
                 edit_data[9] = jsonObject.getString("PROVINCE");
                 edit_data[10] = jsonObject.getString("POSTCODE");
+                edit_data[11] = jsonObject.getString("REQUIREMENT_DETAIL");
             }else {
                 Toast.makeText(getActivity(), "ไม่มีข้อมูล", Toast.LENGTH_LONG).show();
             }
@@ -120,6 +121,9 @@ public class ContractorEditProfileFragment extends Fragment implements View.OnCl
         editText = (EditText) contractorView.findViewById(R.id.postCode);
         POSTCODE = editText.getText().toString();
 
+        editText = (EditText) contractorView.findViewById(R.id.textArea);
+        REQUIREMENT_DETAIL = editText.getText().toString();
+
         editText = (EditText) contractorView.findViewById(R.id.edit_confirm_password);
         CONFIRM_PASSWORD = editText.getText().toString();
 
@@ -130,7 +134,10 @@ public class ContractorEditProfileFragment extends Fragment implements View.OnCl
         PASSWORD = CONFIRM_PASSWORD;
 
         DEPARTMENT = "contractor";
-        String query = "&EMAIL=" + EMAIL + "&TITLE_NAME=" + TITLE_NAME + "&FIRST_NAME=" + FIRST_NAME + "&LAST_NAME=" + LAST_NAME + "&PHONE=" + PHONE + "&ADDRESS=" + ADDRESS + "&SUB_DISTRICT=" + SUB_DISTRICT + "&DISTRICT=" + DISTRICT + "&PROVINCE=" + PROVINCE + "&POSTCODE=" + POSTCODE + "&CONTRACTOR_ID=" + CONTRACTOR_ID + "&COMPANY_NAME=" + COMPANY_NAME;
+        String query = "&EMAIL=" + EMAIL + "&TITLE_NAME=" + TITLE_NAME + "&FIRST_NAME=" + FIRST_NAME +
+                "&LAST_NAME=" + LAST_NAME + "&PHONE=" + PHONE + "&ADDRESS=" + ADDRESS + "&SUB_DISTRICT=" +
+                SUB_DISTRICT + "&DISTRICT=" + DISTRICT + "&PROVINCE=" + PROVINCE + "&POSTCODE=" + POSTCODE +
+                "&CONTRACTOR_ID=" + CONTRACTOR_ID + "&COMPANY_NAME=" + COMPANY_NAME + "&REQUIREMENT_DETAIL=" + REQUIREMENT_DETAIL;
         Url = "http://188.166.191.60/api/v2/account/update/profile?username=" + USERNAME + "&password=" + PASSWORD + "&department=" + DEPARTMENT + query;
         Log.d("Edit profile",Url);
 
@@ -162,6 +169,7 @@ public class ContractorEditProfileFragment extends Fragment implements View.OnCl
                     .add("POSTCODE", POSTCODE)
                     .add("CONTRACTOR_ID", CONTRACTOR_ID)
                     .add("COMPANY_NAME", COMPANY_NAME)
+                    .add("REQUIREMENT_DETAIL", REQUIREMENT_DETAIL)
                     .build();
 
             request = new Request.Builder()
@@ -200,9 +208,9 @@ public class ContractorEditProfileFragment extends Fragment implements View.OnCl
         }
     }
 
-    private String loadPreferencesContractor() {
+    private String loadPreferencesContractor(String key) {
         SharedPreferences preferences = getActivity().getSharedPreferences("APP_PARAMS", Context.MODE_PRIVATE);
-        String profile = preferences.getString("SEND_TO_EDIT", "Not found");
-        return profile;
+        String data = preferences.getString(key, "Not found");
+        return data;
     }
 }

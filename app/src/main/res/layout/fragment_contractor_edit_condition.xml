@@ -8,37 +8,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/colorWhiteBackground"
-        android:orientation="vertical">
-
-        <TextView
-            android:id="@+id/conditionLabel"
-            style="@style/MediumBoldGrayDarkText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:text="@string/condition" />
-
-        <EditText
-            android:id="@+id/textArea"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorNonSelected"
-            android:gravity="top|start"
-            android:inputType="textMultiLine"
-            android:overScrollMode="always"
-            android:scrollbarStyle="insideInset"
-            android:scrollbars="vertical"
-            android:lines="4"
-            android:padding="10dp"
-            android:layout_margin="10dp"
-            android:textAppearance="@style/MediumGrayLightText"
-            android:scrollHorizontally="false" />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
         android:background="@color/colorWhiteBackground"
         android:orientation="vertical">
@@ -58,146 +27,149 @@
             android:background="@color/colorWhiteBackground">
 
             <TableRow
-                android:id="@+id/tableRow1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/colorSearchDateSelect"
+                android:gravity="start"
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/numCutterLabel"
-                    style="@style/SmallGreenDarkText"
+                    style="@style/MediumGreenDarkText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical"
+                    android:layout_weight="20"
                     android:text="@string/cutter_num" />
 
                 <EditText
                     android:id="@+id/numCutter"
                     style="@style/MediumBoldGrayDarkText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:inputType="number"
+                    android:gravity="center_vertical|end"
+                    android:inputType="numberDecimal"
                     android:text="0" />
 
                 <TextView
                     android:id="@+id/unitCutterLabel"
-                    style="@style/SmallGreenDarkText"
+                    style="@style/MediumGreenDarkText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginStart="10dp"
-                    android:gravity="end"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical|end"
                     android:text="@string/car_unit" />
-
             </TableRow>
 
             <TableRow
-                android:id="@+id/tableRow2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/abilityCutterLabel"
-                    style="@style/SmallGreenDarkText"
+                    style="@style/MediumGreenDarkText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical"
+                    android:layout_weight="20"
                     android:text="@string/cutter_ability" />
 
                 <EditText
                     android:id="@+id/cutterBlank"
                     style="@style/MediumBoldGrayDarkText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:inputType="number"
+                    android:gravity="center_vertical|end"
+                    android:inputType="numberDecimal"
                     android:text="0" />
 
                 <TextView
                     android:id="@+id/cutterRateUnit"
-                    style="@style/SmallGreenDarkText"
+                    style="@style/MediumGreenDarkText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginStart="10dp"
-                    android:gravity="end"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical|end"
                     android:text="ตัน/ไร่" />
             </TableRow>
 
             <TableRow
-                android:id="@+id/tableRow3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:background="@color/colorSearchDateSelect"
+                android:gravity="start"
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/numTractorLabel"
-                    style="@style/SmallGreenDarkText"
+                    style="@style/MediumGreenDarkText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical"
+                    android:layout_weight="20"
                     android:text="@string/tractor_num" />
 
                 <EditText
                     android:id="@+id/numTractor"
                     style="@style/MediumBoldGrayDarkText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:inputType="number"
+                    android:gravity="center_vertical|end"
+                    android:inputType="numberDecimal"
                     android:text="0" />
 
                 <TextView
                     android:id="@+id/unitTractorLabel"
-                    style="@style/SmallGreenDarkText"
+                    style="@style/MediumGreenDarkText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginStart="10dp"
-                    android:gravity="end"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical|end"
                     android:text="@string/car_unit" />
-
             </TableRow>
 
             <TableRow
-                android:id="@+id/tableRow4"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:padding="10dp">
 
                 <TextView
                     android:id="@+id/abilityTractorLabel"
-                    style="@style/SmallGreenDarkText"
+                    style="@style/MediumGreenDarkText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="20dp"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical"
+                    android:layout_weight="20"
                     android:text="@string/tractor_ability" />
 
                 <EditText
                     android:id="@+id/tractorBlank"
                     style="@style/MediumBoldGrayDarkText"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_marginEnd="10dp"
                     android:layout_marginStart="10dp"
                     android:layout_weight="1"
-                    android:gravity="center_vertical"
-                    android:inputType="number"
+                    android:gravity="center_vertical|end"
+                    android:inputType="numberDecimal"
                     android:text="0" />
 
                 <TextView
                     android:id="@+id/tractorRateUnit"
-                    style="@style/SmallGreenDarkText"
+                    style="@style/MediumGreenDarkText"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginEnd="20dp"
-                    android:layout_marginStart="10dp"
-                    android:gravity="end"
+                    android:layout_height="fill_parent"
+                    android:gravity="center_vertical|end"
                     android:text="ไร่/วัน" />
-
             </TableRow>
         </TableLayout>
     </LinearLayout>
@@ -206,8 +178,26 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="2dp"
-        android:background="@color/colorWhiteBackground"
-        android:orientation="vertical">
+        android:background="@color/colorSearchDateSelect"
+        android:gravity="center"
+        android:orientation="horizontal">
 
+        <Button
+            android:id="@+id/clearBtn"
+            style="@style/MediumOrangeButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="2"
+            android:text="ล้างค่า" />
+
+        <Button
+            android:id="@+id/saveBtn"
+            style="@style/MediumGreenButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:text="@string/save_button" />
     </LinearLayout>
 </LinearLayout>

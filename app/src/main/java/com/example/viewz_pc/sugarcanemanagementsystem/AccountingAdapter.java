@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -24,11 +25,13 @@ import java.util.ArrayList;
 
 public class AccountingAdapter extends RecyclerView.Adapter<AccountingAdapter.ViewHolder> {
     private Context context;
-    private ArrayList<PlantModel> order_plant;
+    private ArrayList<PlantModel> order_plant, dialog_data;
+    private int index = 0;
 
-    AccountingAdapter(Context context, ArrayList<PlantModel> order_plant) {
+    AccountingAdapter(Context context, ArrayList<PlantModel> order_plant, ArrayList<PlantModel> dialog_data) {
         this.context = context;
         this.order_plant = order_plant;
+        this.dialog_data = dialog_data;
     }
 
     class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -47,7 +50,7 @@ public class AccountingAdapter extends RecyclerView.Adapter<AccountingAdapter.Vi
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override public void onClick(View v) {
-                    int i = getAdapterPosition();
+                    index = getAdapterPosition();
 
                 }
             });
@@ -56,20 +59,36 @@ public class AccountingAdapter extends RecyclerView.Adapter<AccountingAdapter.Vi
         @Override
         public void onClick(View v) {
             AlertDialog.Builder builder = new AlertDialog.Builder(context);
-            builder.setCancelable(false);
-
             LayoutInflater inflater = (LayoutInflater) context.getSystemService( Context.LAYOUT_INFLATER_SERVICE );
             View view = inflater.inflate(R.layout.dialog_plant_cost, null);
-            /*final EditText zoneName = (EditText) view.findViewById(R.id.zoneName);
-            Button okBtn = (Button) view.findViewById(R.id.okBtn);
-            ImageView exitBtn = (ImageView) view.findViewById(R.id.exitBtn);
+            DecimalFormat formatter = new DecimalFormat("#,###.##");
 
-            okBtn.setOnClickListener(new View.OnClickListener(){
-                @Override
-                public void onClick(View v) {
+            index = getAdapterPosition();
+            double db_format;
+            TextView textView;
+            textView = (TextView) view.findViewById(R.id.title);
+            textView.setText("หมายเลขแปลง: " + order_plant.get(index).getId());
 
-                }
-            });*/
+            textView = (TextView) view.findViewById(R.id.labor);
+            db_format = Double.parseDouble(dialog_data.get(index).getLabor_cost());
+            textView.setText(formatter.format(db_format));
+
+            textView = (TextView) view.findViewById(R.id.repair);
+            db_format = Double.parseDouble(dialog_data.get(index).getRepair_cost());
+            textView.setText(formatter.format(db_format));
+
+            textView = (TextView) view.findViewById(R.id.decadent);
+            db_format = Double.parseDouble(dialog_data.get(index).getDecadent_cost());
+            textView.setText(formatter.format(db_format));
+
+            textView = (TextView) view.findViewById(R.id.fuel);
+            db_format = Double.parseDouble(dialog_data.get(index).getFuel_cost());
+            textView.setText(formatter.format(db_format));
+
+            textView = (TextView) view.findViewById(R.id.trans);
+            db_format = Double.parseDouble(dialog_data.get(index).getTrans_cost());
+            textView.setText(formatter.format(db_format));
+
             builder.setView(view);
             final AlertDialog dialog = builder.create();
             dialog.show();

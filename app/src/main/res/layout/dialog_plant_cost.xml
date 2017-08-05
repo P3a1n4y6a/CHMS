@@ -3,6 +3,17 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/title"
+        style="@style/MediumBoldGrayLightText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:padding="10dp"
+        android:background="@color/colorWhiteBackground"
+        android:layout_marginBottom="2dp"
+        android:text="@string/plant" />
+
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -29,7 +40,7 @@
                 android:layout_height="fill_parent"
                 android:layout_marginStart="10dp"
                 android:layout_weight="40"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical|end" />
 
             <TextView
                 android:id="@+id/labor_unit"
@@ -54,7 +65,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:gravity="center_vertical"
-                android:text="@string/repair_cost" />
+                android:text="@string/repair_plant_cost" />
 
             <TextView
                 android:id="@+id/repair"
@@ -62,7 +73,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_weight="20"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical|end" />
 
             <TextView
                 android:id="@+id/repair_unit"
@@ -95,7 +106,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_weight="20"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical|end" />
 
             <TextView
                 android:id="@+id/decadent_unit"
@@ -128,7 +139,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_weight="20"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical|end" />
 
             <TextView
                 android:id="@+id/fuel_unit"
@@ -161,7 +172,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="fill_parent"
                 android:layout_weight="20"
-                android:gravity="center_vertical" />
+                android:gravity="center_vertical|end" />
 
             <TextView
                 android:id="@+id/trans_unit"

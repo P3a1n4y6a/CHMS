@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
@@ -36,7 +37,12 @@ public class CriteriaListAdapter extends RecyclerView.Adapter<CriteriaListAdapte
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         holder.question.setText(criteria[position]);
+
         holder.answer.setText(ans.get(position));
+        DecimalFormat formatter = new DecimalFormat("#,###.##");
+        double db_format = Double.parseDouble(ans.get(position));
+        holder.answer.setText(formatter.format(db_format));
+
         holder.unit.setText(unitList[position]);
         if (position%2 != 0) {
             holder.linearLayout.setBackgroundColor(context.getResources().getColor(R.color.colorSearchDateSelect));

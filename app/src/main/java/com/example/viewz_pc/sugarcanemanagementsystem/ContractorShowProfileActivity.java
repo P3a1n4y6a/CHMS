@@ -4,17 +4,21 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
+import android.os.Handler;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.IOException;
@@ -26,6 +30,7 @@ import okhttp3.Response;
 
 public class ContractorShowProfileActivity extends AppCompatActivity implements View.OnClickListener {
     private FloatingActionButton editBtn;
+    private SwipeRefreshLayout swipeRefreshLayout;
     private TextView txt_fullname, txt_company, txt_address, txt_email, txt_phone,txt_requirement_detail;
     private String[] question, unit;
     private LinearLayoutManager layoutManager;
@@ -36,6 +41,7 @@ public class ContractorShowProfileActivity extends AppCompatActivity implements 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_contractor_show_profile);
+        swipeRefreshLayout = (SwipeRefreshLayout)findViewById(R.id.swiperefresh);
 
         txt_fullname = (TextView) findViewById(R.id.fullname);
         txt_company = (TextView) findViewById(R.id.company);
@@ -50,6 +56,26 @@ public class ContractorShowProfileActivity extends AppCompatActivity implements 
         new OkHttpHandler().execute();
         new OkHttpHandler2().execute();
         new OkHttpHandler3().execute();
+
+        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(android.R.color.holo_red_light),
+                getResources().getColor(android.R.color.holo_orange_light),
+                getResources().getColor(android.R.color.holo_green_light));
+        swipeRefreshLayout.setOnRefreshListener(
+                new SwipeRefreshLayout.OnRefreshListener() {
+                    @Override
+                    public void onRefresh() {
+                        new OkHttpHandler().execute();
+                        new OkHttpHandler2().execute();
+                        new OkHttpHandler3().execute();
+
+                        new Handler().postDelayed(new Runnable() {
+                            @Override public void run() {
+                                swipeRefreshLayout.setRefreshing(false);
+                            }
+                        }, 1000);
+                    }
+                }
+        );
     }
 
     @Override
@@ -64,11 +90,11 @@ public class ContractorShowProfileActivity extends AppCompatActivity implements 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setNestedScrollingEnabled(false);
 
-        question = new String[]{"1. ค่าแรง", "2. ค่าหัวตัน", getResources().getString(R.string.repair_cost),
-                "4. ค่าเริ่มแรก", "5. อายุการใช้งาน", getResources().getString(R.string.transport_cost),
-                getResources().getString(R.string.fuel_cutter_cost), getResources().getString(R.string.fuel_rate_use),
-                "9. พื้นที่"};
-        unit = new String[]{"บาท/ตัน", "บาท/ตัน", "บาท", "บาท", "วัน", "บาท/รอบ", "บาท/ลิตร", "ลิตร/ตัน", "บาท/ไร่"};
+        question = new String[]{"1. ค่าแรง", "2. ค่าหัวตัน", "3. ค่าต่อพื้นที่", "4. ค่าซ่อมบำรุง\nรถตัด", "5. ค่าซ่อมบำรุง\nรถแทรกเตอร์",
+                "6. ผลิตอ้อย", "7. ผลิตไร่", "8. ราคาซื้อ\nรถตัดอ้อย", "9. ราคาซื้อ\nรถแทรกเตอร์", "10. อายุการใช้งาน\nรถตัดอ้อย", "11. อายุการใช้งาน\nรถแทรกเตอร์",
+                "12. อัตราน้ำมันรถตัดอ้อย", "13. ค่าน้ำมัน", "14. ค่าขนย้ายแปลง"};
+        unit = new String[]{"บาท/วัน", "บาท/ตัน", "บาท/ไร่", "บาท/ปี", "บาท/ปี", "ตัน/ปี", "ไร่/ปี", "บาท/ปี", "บาท/ปี",
+                "ปี", "ปี", "ลิตร/ตัน", "บาท/ลิตร", "บาท/ครั้ง"};
 
         RecyclerView.Adapter adapter = new CriteriaListAdapter(ContractorShowProfileActivity.this, question, unit, answers);
         recyclerView.setAdapter(adapter);
@@ -112,13 +138,13 @@ public class ContractorShowProfileActivity extends AppCompatActivity implements 
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             Log.d("Profile here",result);
-            saveToSharedPrefs(result);
+            saveToSharedPrefs("SEND_TO_EDIT", result);
             try {
                 if (!result.equals("[]")) {
                     JSONArray jsonArray = new JSONArray(result);
                     JSONObject jsonObject = jsonArray.getJSONObject(0);
 
-                    String fullname, company, address, email, phone;
+                    String fullname, company, address, email, phone, requirement_detail;
                     fullname = jsonObject.getString("TITLE_NAME") + " " + jsonObject.getString("FIRST_NAME")
                             + " " + jsonObject.getString("LAST_NAME");
                     company = jsonObject.getString("COMPANY_NAME");
@@ -127,12 +153,14 @@ public class ContractorShowProfileActivity extends AppCompatActivity implements 
                     address = jsonObject.getString("ADDRESS") + " " + jsonObject.getString("SUB_DISTRICT")
                             + " " + jsonObject.getString("DISTRICT") +
                             jsonObject.getString("PROVINCE") + " " + jsonObject.getString("POSTCODE");
+                    requirement_detail = jsonObject.getString("REQUIREMENT_DETAIL");
 
                     txt_fullname.setText(fullname);
                     txt_company.setText(company);
                     txt_address.setText(address);
                     txt_email.setText(email);
                     txt_phone.setText(phone);
+                    txt_requirement_detail.setText(requirement_detail);
                 } else {
                     Toast.makeText(ContractorShowProfileActivity.this, "ไม่มีข้อมูล", Toast.LENGTH_LONG).show();
                 }
@@ -182,19 +210,25 @@ public class ContractorShowProfileActivity extends AppCompatActivity implements 
             Log.d("Profile", result);
             try {
                 if (!result.equals("[]")) {
+                    saveToSharedPrefs("RATE", result);
                     JSONArray jsonArray = new JSONArray(result);
                     JSONObject jsonObject = jsonArray.getJSONObject(0);
 
                     answer = new ArrayList<>();
                     answer.add(jsonObject.getString("labor_cost"));
                     answer.add(jsonObject.getString("cost_per_weight"));
-                    answer.add(jsonObject.getString("package_repair_cost"));
-                    answer.add(jsonObject.getString("first_deal_cost"));
-                    answer.add(jsonObject.getString("lifetime"));
-                    answer.add(jsonObject.getString("transfer_cost_per_round"));
-                    answer.add(jsonObject.getString("fuel_cost"));
-                    answer.add(jsonObject.getString("cutter_fuel_rate"));
                     answer.add(jsonObject.getString("cost_per_area"));
+                    answer.add(jsonObject.getString("cutter_repair_cost"));
+                    answer.add(jsonObject.getString("tractor_repair_cost"));
+                    answer.add(jsonObject.getString("weight_per_year"));
+                    answer.add(jsonObject.getString("area_per_year"));
+                    answer.add(jsonObject.getString("cutter_cost"));
+                    answer.add(jsonObject.getString("tractor_cost"));
+                    answer.add(jsonObject.getString("cutter_lifetime"));
+                    answer.add(jsonObject.getString("tractor_lifetime"));
+                    answer.add(jsonObject.getString("cutter_fuel_rate"));
+                    answer.add(jsonObject.getString("fuel_cost"));
+                    answer.add(jsonObject.getString("transfer_cost"));
 
                     showSatisfiedCriteria(answer);
                 } else {
@@ -213,27 +247,22 @@ public class ContractorShowProfileActivity extends AppCompatActivity implements 
         String CONTRACTOR_ID;
 
         @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
+        protected void onPreExecute(){
             CONTRACTOR_ID = loadPreferencesContractor("CONTRACTOR_ID");
-            Log.d("Profile", CONTRACTOR_ID);
         }
 
         @Override
         protected String doInBackground(Object... params) {
-            String url = "http://188.166.191.60/api/v2/contractor/get/detail?CONTRACTOR_ID=" + CONTRACTOR_ID;
-            Log.d("Profile",url);
+            String url = "http://188.166.191.60/api/v2/contractor/get/detail?CONTRACTOR_ID="+CONTRACTOR_ID;
+
             request = new Request.Builder()
                     .url(url)
                     .build();
             try {
 
                 response = client.newCall(request).execute();
-                if (response.isSuccessful()) {
-                    return response.body().string(); // Read data
-                } else {
-                    return "Not Success - code : " + response.code();
-                }
+                return response.body().string();
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -243,46 +272,46 @@ public class ContractorShowProfileActivity extends AppCompatActivity implements 
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            Log.d("Show Profile",result);
-            /*try {
-                if (!result.equals("[]")) {
-                    JSONArray jsonArray = new JSONArray(result);
+            Log.d("Edit Rate", result);
+
+            if(!result.equals("[]")) {
+                saveToSharedPrefs("ABILITY", result);
+                JSONArray jsonArray = null;
+                try {
+                    jsonArray = new JSONArray(result);
                     JSONObject jsonObject = jsonArray.getJSONObject(0);
+                    TextView textView;
+                    textView = (TextView) findViewById(R.id.numCutter);
+                    textView.setText(jsonObject.getString("amount_of_cutter"));
 
-                    String fullname, company, address, email, phone;
-                    fullname = jsonObject.getString("TITLE_NAME") + " " + jsonObject.getString("FIRST_NAME")
-                            + " " + jsonObject.getString("LAST_NAME");
-                    company = jsonObject.getString("COMPANY_NAME");
-                    email = jsonObject.getString("EMAIL");
-                    phone = jsonObject.getString("PHONE");
-                    address = jsonObject.getString("ADDRESS") + " " + jsonObject.getString("SUB_DISTRICT")
-                            + " " + jsonObject.getString("DISTRICT") +
-                            jsonObject.getString("PROVINCE") + " " + jsonObject.getString("POSTCODE");
+                    textView = (TextView) findViewById(R.id.cutterBlank);
+                    textView.setText(jsonObject.getString("total_cutter_ability"));
 
-                    txt_fullname.setText(fullname);
-                    txt_company.setText(company);
-                    txt_address.setText(address);
-                    txt_email.setText(email);
-                    txt_phone.setText(phone);
-                } else {
-                    Toast.makeText(ContractorShowProfileActivity.this, "ไม่มีข้อมูล", Toast.LENGTH_LONG).show();
+                    textView = (TextView) findViewById(R.id.numTractor);
+                    textView.setText(jsonObject.getString("amount_of_tractor"));
+
+                    textView = (TextView) findViewById(R.id.tractorBlank);
+                    textView.setText(jsonObject.getString("total_tractor_ability"));
+
+                } catch (JSONException e) {
+                    e.printStackTrace();
                 }
-            } catch (Exception e) {
-                e.printStackTrace();
-            }*/
+            } else {
+                Toast.makeText(ContractorShowProfileActivity.this, "เกิดข้อผิดพลาดในการส่งข้อมูล", Toast.LENGTH_LONG).show();
+            }
         }
+    }
+
+    public void saveToSharedPrefs(String key, String data) {
+        SharedPreferences pref = getSharedPreferences("APP_PARAMS", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
+        editor.putString(key, data);
+        editor.commit();
     }
 
     private String loadPreferencesContractor(String key) {
         SharedPreferences preferences = getSharedPreferences("APP_PARAMS", Context.MODE_PRIVATE);
         String data = preferences.getString(key, "Not found");
         return data;
-    }
-
-    public void saveToSharedPrefs(String data) {
-        SharedPreferences pref = getSharedPreferences("APP_PARAMS", Context.MODE_PRIVATE);
-        SharedPreferences.Editor editor = pref.edit();
-        editor.putString("SEND_TO_EDIT", data);
-        editor.commit();
     }
 }

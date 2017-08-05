@@ -7,7 +7,7 @@ package com.example.viewz_pc.sugarcanemanagementsystem;
 public class PlantModel {
     private String id, address, area, rate, status, zone_id, fullname, estCut, survey, employee;
     private double latitude, longitude;
-    private String labor_cost, repair_cost, decadent_cost, fuel_cost, trans_cost;
+    private String labor_cost, repair_cost, decadent_cost, fuel_cost, trans_cost, work_type;
 
     PlantModel(String id, String area) {
         this.id = id;
@@ -30,7 +30,8 @@ public class PlantModel {
         this.employee = employee;
     }
 
-    PlantModel(String labor_cost, String repair_cost, String decadent_cost, String fuel_cost, String trans_cost){
+    PlantModel(String work_type, String labor_cost, String repair_cost, String decadent_cost, String fuel_cost, String trans_cost){
+        this.work_type = work_type;
         this.labor_cost = labor_cost;
         this.repair_cost = repair_cost;
         this.decadent_cost = decadent_cost;
@@ -92,5 +93,9 @@ public class PlantModel {
 
     public String getEmployee() {
         return employee;
+    }
+
+    public String getWork_type() {
+        return work_type;
     }
 }

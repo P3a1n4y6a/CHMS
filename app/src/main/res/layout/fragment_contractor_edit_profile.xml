@@ -218,9 +218,41 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@color/colorWhiteBackground"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/conditionLabel"
+                    style="@style/MediumBoldGrayDarkText"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="10dp"
+                    android:text="@string/condition" />
+
+                <EditText
+                    android:id="@+id/textArea"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:background="@color/colorNonSelected"
+                    android:gravity="top|start"
+                    android:inputType="textMultiLine"
+                    android:lines="10"
+                    android:overScrollMode="always"
+                    android:padding="10dp"
+                    android:scrollHorizontally="false"
+                    android:scrollbarStyle="insideInset"
+                    android:scrollbars="vertical"
+                    android:textAppearance="@style/MediumGrayLightText" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="2dp"
                 android:background="@color/colorWhiteBackground"
                 android:orientation="vertical">
+
                 <TextView
                     android:id="@+id/title_edit_confirm_password"
                     style="@style/MediumBoldGrayDarkText"
@@ -228,14 +260,16 @@
                     android:layout_height="wrap_content"
                     android:padding="10dp"
                     android:text="@string/confirm_password" />
+
                 <EditText
                     android:id="@+id/edit_confirm_password"
                     style="@style/MediumGrayLightText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="textPassword"
+                    android:layout_marginEnd="30dp"
                     android:layout_marginStart="30dp"
-                    android:layout_marginEnd="30dp"/>
+                    android:inputType="textPassword" />
+
                 <Button
                     android:id="@+id/saveBtn"
                     style="@style/MediumGreenButton"
